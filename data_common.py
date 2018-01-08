@@ -7,6 +7,7 @@
 import os
 import shutil
 import traceback
+import time
 
 import pandas
 
@@ -169,14 +170,10 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None
     if os.path.exists(dst):
         print("{0} Exists".format(dst))
         shutil.rmtree(dst)
+        time.sleep(0.5)
     os.mkdir(dst)
 
     for root, dirs, files in os.walk(src, topdown):
-
-        if directories is not None:
-            if root.split(os.sep)[-1] not in directories:
-                print(root.split(os.sep)[-1])
-                continue
 
         for directory in dirs:
             directory_name = "{}{}{}".format(
@@ -187,6 +184,11 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None
         base_dir = os.sep.join(root.split(os.sep)[:-1])
         for file_ in files:
             try:
+                if directories is not None:
+                    if root.split(os.sep)[-1] not in directories:
+                        print(root.split(os.sep)[-1])
+                        continue                
+
                 if file_.split('.')[-1].lower() in types:
                     print(file_)
                     directory_name = root.replace(src, dst)
