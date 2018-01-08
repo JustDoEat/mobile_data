@@ -172,9 +172,10 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None
     os.mkdir(dst)
 
     for root, dirs, files in os.walk(src, topdown):
-        
+
         if directories is not None:
-            if root.split(os.sep)[:-1] not in directories:
+            if root.split(os.sep)[-1] not in directories:
+                print(root.split(os.sep)[-1])
                 continue
 
         for directory in dirs:
@@ -197,3 +198,8 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None
                 print(info)
                 traceback.print_exc()
                 print('continue...')
+
+
+if __name__ == '__main__':
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types=(
+        "py", "pdf"), directories=("back",))
