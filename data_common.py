@@ -178,7 +178,6 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None
         for directory in dirs:
             directory_name = "{}{}{}".format(
                 root.replace(src, dst), os.sep, directory)
-            print(directory_name)
             os.makedirs(directory_name)
 
         base_dir = os.sep.join(root.split(os.sep)[:-1])
@@ -186,7 +185,6 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None
             try:
                 if directories is not None:
                     if root.split(os.sep)[-1] not in directories:
-                        print(root.split(os.sep)[-1])
                         continue                
 
                 if file_.split('.')[-1].lower() in types:
