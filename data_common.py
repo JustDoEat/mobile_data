@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 # Author:    xurongzhong#126.com wechat:pythontesting qq:37391319
 # CreateDate: 2018-1-8
+# data_common.py
+
+import os
+import shutil
+import traceback
 
 import pandas
 
@@ -155,7 +160,7 @@ def produce_xls(results, output):
         print("please close the output file!")
 
 
-def copy_files_by_types(src, dst, topdown=True, types=("xls",)):
+def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None):
     '''
     拷贝指定扩展名的文件从源目录src到目的目录dst。
     示例：copy_files_by_types(r"d:\tmp", r"d:\tmp2", types=("py","pdf"))
@@ -167,6 +172,10 @@ def copy_files_by_types(src, dst, topdown=True, types=("xls",)):
     os.mkdir(dst)
 
     for root, dirs, files in os.walk(src, topdown):
+        
+        if directories is not None:
+            if root.split(os.sep)[:-1] not in directories:
+                continue
 
         for directory in dirs:
             directory_name = "{}{}{}".format(
