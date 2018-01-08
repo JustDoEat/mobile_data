@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Author:    xurongzhong@sensetime.com wechat:pythontesting qq:37391319
-# CreateDate: 2018-1-4
+# CreateDate: 2018-1-8
 # parse_test_cases_data.py
 
 '''
