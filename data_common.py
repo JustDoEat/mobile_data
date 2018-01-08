@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# Author:    xurongzhong@sensetime.com wechat:pythontesting qq:37391319
+# Author:    xurongzhong#126.com wechat:pythontesting qq:37391319
 # CreateDate: 2018-1-8
 
 import pandas
@@ -153,3 +153,38 @@ def produce_xls(results, output):
         writer.save()
     except IOError:
         print("please close the output file!")
+
+
+def copy_files_by_types(src, dst, topdown=True, types=("xls",)):
+    '''
+    拷贝指定扩展名的文件从源目录src到目的目录dst。
+    示例：copy_files_by_types(r"d:\tmp", r"d:\tmp2", types=("py","pdf"))
+    '''
+
+    if os.path.exists(dst):
+        print("{0} Exists".format(dst))
+        shutil.rmtree(dst)
+    os.mkdir(dst)
+
+    for root, dirs, files in os.walk(src, topdown):
+
+        for directory in dirs:
+            directory_name = "{}{}{}".format(
+                root.replace(src, dst), os.sep, directory)
+            print(directory_name)
+            os.makedirs(directory_name)
+
+        base_dir = os.sep.join(root.split(os.sep)[:-1])
+        for file_ in files:
+            try:
+                if file_.split('.')[-1].lower() in types:
+                    print(file_)
+                    directory_name = root.replace(src, dst)
+                    srt_name = u"{}{}{}".format(root, os.sep, file_)
+                    dst_name = u"{}{}{}".format(directory_name, os.sep, file_)
+                    shutil.copyfile(srt_name, dst_name)
+            except Exception as info:
+                print('Error: {}'.format(file_))
+                print(info)
+                traceback.print_exc()
+                print('continue...')
