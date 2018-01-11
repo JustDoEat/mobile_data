@@ -2,13 +2,14 @@
 
 ===================================================================
 
-[TOC]
 
-# 参考资料
+
+# Python测试开发库
+
+## 参考资料
 
 https://github.com/vinta/awesome-python
 
-https://github.com/jobbole/awesome-python-cn
 
 交流QQ群：python 测试开发 144081101
 
