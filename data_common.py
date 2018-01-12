@@ -168,7 +168,7 @@ def check_directory(name):
         shutil.rmtree(name)
         time.sleep(0.5)
     print("mkdir {0} .".format(name))
-    Path(name).mkdir()
+    Path(name).mkdir(parents=True, exist_ok=True)
 
 
 def copy_files_by_types(src, dst, types="csv,py",
@@ -210,7 +210,7 @@ def copy_files_by_types(src, dst, types="csv,py",
 
                 if not Path(dirname).exists():
                     print("mkdir {}".format(dirname))
-                    Path(dirname).mkdir()
+                    Path(dirname).mkdir(parents=True, exist_ok=True)
             else:
                 dst_filename = "{}{}{}".format(
                     dst, os.sep, Path(file_name).name)
@@ -220,5 +220,5 @@ def copy_files_by_types(src, dst, types="csv,py",
 
 
 if __name__ == '__main__':
-    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py,pdf",
-                        one_directory=False, directories="back")
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="jpg",
+        one_directory=False, directories="back")
