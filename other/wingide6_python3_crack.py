@@ -4,7 +4,7 @@
 # CreateDate: 2018-1-12
 # From http://blog.csdn.net/q15920659569/article/details/54577098
 '''
-先执行本程序，生成序列号，然后从wingide中复制请求码，生成破解码。
+先执行本程序，生成序列号，然后从wingide中复制请求码，生成激活码。
 '''
 
 import string

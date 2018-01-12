@@ -8,6 +8,7 @@ import os
 import shutil
 import traceback
 import time
+from pathlib import Path
 
 import pandas
 
@@ -161,50 +162,63 @@ def produce_xls(results, output):
         print("please close the output file!")
 
 
-def copy_files_by_types(src, dst, topdown=True, types=("xls",), directories=None):
+def check_directory(name):
+    if Path(name).exists():
+        print("{0} Exists，Now Delete it!".format(name))
+        shutil.rmtree(name)
+        time.sleep(0.5)
+    print("mkdir {0} .".format(name))
+    Path(name).mkdir()
+
+
+def copy_files_by_types(src, dst, types="csv,py",
+                        directories=None, one_directory=True):
     '''
     拷贝指定扩展名的文件从源目录src到目的目录dst。
-    示例：copy_files_by_types(r"d:\tmp", r"d:\tmp2", types=("py","pdf"))
+    directories: 是否指定目录，多个目录用逗号分隔。
+    one_directory：是否拷贝到一个目录，选择为False会建立目录层次。
+
+    示例：
+
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py", 
+        directories=None, one_directory=False) 
+
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py,pdf", 
+        one_directory=False, directories="back,test")
     '''
 
-    if os.path.exists(dst):
-        print("{0} Exists".format(dst))
-        shutil.rmtree(dst)
-        time.sleep(0.5)
-    os.mkdir(dst)
+    check_directory(dst)
 
-    for root, dirs, files in os.walk(src, topdown):
+    p = Path(src)
+    for file_ext in types.split(','):
+        for file_name in p.glob('**/*.{0}'.format(file_ext)):
+            # print(file_name)
 
-        for directory in dirs:
-            directory_name = "{}{}{}".format(
-                root.replace(src, dst), os.sep, directory)
-            os.makedirs(directory_name)
+            if directories is not None:
+                flag = False
+                for directory in directories.split(','):
+                    if os.sep + directory + os.sep in str(file_name):
+                        flag = True
+                if not flag:
+                    continue
 
-        base_dir = os.sep.join(root.split(os.sep)[:-1])
-        for file_ in files:
-            try:
-                
-                if directories is not None:
-                    flag = False
-                    for item in directories:
-                        if item in root:
-                            flag = True
-                    if not False:
-                        continue              
+            if not one_directory:
 
-                if file_.split('.')[-1].lower() in types:
-                    print(file_)
-                    directory_name = root.replace(src, dst)
-                    srt_name = u"{}{}{}".format(root, os.sep, file_)
-                    dst_name = u"{}{}{}".format(directory_name, os.sep, file_)
-                    shutil.copyfile(srt_name, dst_name)
-            except Exception as info:
-                print('Error: {}'.format(file_))
-                print(info)
-                traceback.print_exc()
-                print('continue...')
+                dirname = str(file_name.parent).replace(src, dst)
+                dst_filename = "{}{}{}".format(
+                    dirname, os.sep, file_name.name)
+
+                if not Path(dirname).exists():
+                    print("mkdir {}".format(dirname))
+                    Path(dirname).mkdir()
+            else:
+                dst_filename = "{}{}{}".format(
+                    dst, os.sep, Path(file_name).name)
+
+            print("Copying {} to {}".format(file_name, dst_filename))
+            shutil.copyfile(file_name, dst_filename)
 
 
 if __name__ == '__main__':
-    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types=(
-        "py", "pdf"), directories=("back",))
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py,pdf",
+                        one_directory=False, directories="back")

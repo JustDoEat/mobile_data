@@ -1,7 +1,18 @@
 人脸测试的一些小脚本和教程。
 
+flask/api_demo: 使用python3和flask构建RESTful API(接口测试服务) 的源码 [文档地址](http://t.cn/RQzD0uY)
 
 wingide6 破解：other/wingide6_python3_crack.py
+
+
+python新书：
+
+===================================================================
+
+[wxPython Recipes - 2017.pdf](http://file.allitebooks.com/20171213/wxPython%20Recipes.pdf)
+
+
+常用的python测试开发库。
 
 ===================================================================
 
@@ -797,6 +808,60 @@ python-currencies因为星级较少没有收录
  * pyzmail：创建，发送和解析电子邮件。[链接](https://pypi.python.org/pypi/pyzmail)
 
  * Talon：Mailgun 库，用来抽取信息和签名。[链接](https://github.com/mailgun/talon)
+
+ * yagmail- 另外一个 Gmail/SMTP客户端。[链接](https://github.com/kootenpv/yagmail)
+
+ * sync-engine - IMAP/SMTP同步。 [链接](https://github.com/nylas/sync-engine) -- 推荐
+
+## 环境管理
+
+Python版本和环境管理
+
+ * Pipenv：Pipfile，Pip和Virtualenv的结合。[链接](https://github.com/pypa/pipenv) --强烈推荐
+
+ * p：简单的python版本管理工具。[链接](https://github.com/qw3rtman/p)
+
+ * pyenv：简单的python版本管理。[链接](https://github.com/pyenv/pyenv) --强烈推荐
+
+ * venv：创建python虚拟环境，python3标准库。[链接](https://docs.python.org/3/library/venv.html) --强烈推荐
+
+ * virtualenv：创建独立的Python 环境。[链接](https://github.com/pypa/virtualenv/) --强烈推荐
+
+ * virtualenvwrapper：virtualenv 的扩展。[链接](https://bitbucket.org/virtualenvwrapper/virtualenvwrapper) --强烈推荐
+
+## 文件
+
+文件管理和 MIME（多用途的网际邮件扩充协议）类型检测。
+
+ * imghdr：（Python 标准库）检测图片类型。[链接](https://docs.python.org/2/library/imghdr.html)
+
+ * mimetypes：（Python 标准库）将文件名映射为 MIME 类型。[链接](https://docs.python.org/2/library/mimetypes.html)
+
+ * path.py：对 os.path 进行封装的模块。[链接](https://github.com/jaraco/path.py) 
+
+ * pathlib：（Python3.4+ 标准库）跨平台的、面向对象的路径操作库。[链接](https://docs.python.org/dev/library/pathlib.html) --强烈推荐
+
+ * python-magic：文件类型检测的第三方库 libmagic 的 Python 接口。[链接](https://github.com/ahupp/python-magic)
+
+ * Unipath：用面向对象的方式操作文件和目录。[链接](https://github.com/mikeorr/Unipath)
+
+ * watchdog：管理文件系统事件的 API 和 shell 工具。[链接](https://github.com/gorakhargosh/watchdog) --推荐
+
+
+## 包管理(Package Management)
+
+管理包和依赖
+
+ * pip：管理包和依赖。[链接](https://github.com/pypa/pip/) [pypi](https://pypi.python.org/pypi) --强烈推荐
+
+ * conda：跨平台，Python 二进制包管理工具。[链接](https://github.com/conda/conda/) --强烈推荐
+
+ * Curdling：管理 Python 包的命令行工具。[链接](https://github.com/clarete/curdling)
+
+ * pip-tools：保证 Python 包依赖关系更新的工具。[链接](https://github.com/jazzband/pip-tools)
+
+ * wheel：Python 分发的新标准，意在取代 eggs。[链接](https://github.com/meshy/pythonwheels) --强烈推荐
+
 
 ## 特殊文本格式处理
 
