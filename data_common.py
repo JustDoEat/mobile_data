@@ -39,14 +39,14 @@ maps = {
     20: (u"白天-室外-正常光-走动-海翔楼下空旷处（品骏快递）（背阴处正常光）",
          u"白天-室外-正常光"),
     21: (u"白天-室外-正常光-走动-荔园路树荫下", u"白天-室外-正常光"),
-    22: (u"白天-室外-逆光-非走动-海翔楼下空旷处（品骏快递）（建议中午左右）（背对太阳）",
+    22: (u"白天-室外-逆光-非走动-海翔楼下空旷处 (品骏快递)(建议中午左右)（背对太阳）",
          u"白天-室外-逆光"),
     23: (u"白天-室外-逆光-非走动-荔园路树荫下（建议中午左右）（背对太阳）",
          u"白天-室外-逆光"),
     24: (u"白天-室外-逆光-非走动-（阴天）海翔通往荔园路的楼下通道门口（人物背对门口）",
          u"白天-室外-逆光"),
     25: (u"白天-室外-逆光-非走动-（阴天）手机朝上，背朝天空", u"白天-室外-逆光"),
-    26: (u"白天-室外-逆光-走动-海翔楼下空旷处（品骏快递）（建议中午左右）（背对太阳）",
+    26: (u"白天-室外-逆光-走动-海翔楼下空旷处（品骏快递）（建议中午左右)（背对太阳）",
          u"白天-室外-逆光"),
     27: (u"白天-室外-逆光-走动-荔园路树荫下（建议中午左右）（背对太阳）",
          u"白天-室外-逆光"),
@@ -84,10 +84,12 @@ def count(datas, values):
     '''
     生成统计的用例
     '''
-    total_number = compare_number = live_number = success_number = test_number = 0
+    total_number = compare_number = live_number = success_number = \
+        test_number = 0
     # print(datas)
 
-    for num, case_name, total, compare, live, success, test, r1, r2, r3 in datas:
+    for num, case_name, total, compare, live, success, test, r1, r2, r3 in \
+            datas:
         if num in values:
             total_number += total
             compare_number += compare
@@ -95,11 +97,11 @@ def count(datas, values):
             success_number += success
             test_number += test
 
-    compare, live, user = convert_result(compare_number, live_number,
-                                         total_number, success_number, test_number)
+    compare, live, user = convert_result(
+        compare_number, live_number, total_number, success_number, test_number)
 
-    return ["====", maps[values[0]][0], total_number, compare_number, live_number,
-            success_number, test_number, compare, live, user]
+    return ["====", maps[values[0]][0], total_number, compare_number,
+            live_number, success_number, test_number, compare, live, user]
 
 
 def convert_result(compare_number, live_number, total_number, success_number,
@@ -121,7 +123,8 @@ def produce_xls(results, output):
 
     for i in range(1, len(maps) + 1):
 
-        total_number = compare_number = live_number = success_number = test_number = 0
+        total_number = compare_number = live_number = success_number = \
+            test_number = 0
         old_tag = tag
         tag = maps[i][1]
 
@@ -142,11 +145,13 @@ def produce_xls(results, output):
                 success_number += success
                 test_number += test
 
-            compare, live, user = convert_result(compare_number, live_number,
-                                                 total_number, success_number, test_number)
+            compare, live, user = convert_result(
+                compare_number, live_number, total_number, success_number,
+                test_number)
 
-            datas.append([i, maps[i][0], total_number, compare_number, live_number,
-                          success_number, test_number, compare, live, user, ])
+            datas.append(
+                [i, maps[i][0], total_number, compare_number, live_number,
+                 success_number, test_number, compare, live, user])
 
         # 最后的用例需要进行汇总
         if i == len(maps):
@@ -165,8 +170,15 @@ def produce_xls(results, output):
 def check_directory(name):
     if Path(name).exists():
         print("{0} Exists，Now Delete it!".format(name))
-        shutil.rmtree(name)
-        time.sleep(0.5)
+        try:
+            shutil.rmtree(name)
+            time.sleep(0.5)
+        except Exception as info:
+            print('Error: shutil.rmtree {}'.format(name))
+            print(info)
+            traceback.print_exc()
+            print('Please close file and directories and continue...')
+
     print("mkdir {0} .".format(name))
     Path(name).mkdir(parents=True, exist_ok=True)
 
@@ -180,10 +192,10 @@ def copy_files_by_types(src, dst, types="csv,py",
 
     示例：
 
-    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py", 
-        directories=None, one_directory=False) 
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py",
+        directories=None, one_directory=False)
 
-    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py,pdf", 
+    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="csv,py,pdf",
         one_directory=False, directories="back,test")
     '''
 
@@ -216,9 +228,9 @@ def copy_files_by_types(src, dst, types="csv,py",
                     dst, os.sep, Path(file_name).name)
 
             print("Copying {} to {}".format(file_name, dst_filename))
-            shutil.copyfile(file_name, dst_filename)
+            shutil.copyfile(str(file_name), dst_filename)
 
 
 if __name__ == '__main__':
     copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="jpg",
-        one_directory=False, directories="back")
+                        one_directory=False, directories="back")
