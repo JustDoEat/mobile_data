@@ -232,24 +232,30 @@ def copy_files_by_types(src, dst, types="csv,py",
             shutil.copyfile(str(file_name), dst_filename)
             
 
+def count_number_by_filetypes(input, file_types, output=False):
+    datas = {}
+    for file_ext in file_types.split(','):
+        datas[file_ext] = count_number_by_filetype(input, file_ext, output)
+    return datas
+
 def count_number_by_filetype(input, file_type, output=False):
     datas = {}
     dirs = glob.glob("{0}/*/".format(input))
     
     if output:
-        print(file_type, ':\n')
+        print('\n', file_type, ':\n')
     
     for dir_ in (dirs):
         files = glob.glob("{0}/*.{1}".format(dir_, file_type))
-        datas[int(dir_.split(os.sep)[-2])] = len(files)         
+        datas[int(dir_.split(os.sep)[-2].lstrip('0'))] = len(files)         
     
-        for seq in range(1,len(maps) + 1):         
-            if seq not in datas:
-                datas[seq] = 0
-            if output:
-                print(datas[seq])
-    return datas
+    for seq in range(1,len(maps) + 1):         
+        if seq not in datas:
+            datas[seq] = 0
+        if output:
+            print(datas[seq])
             
+    return datas            
 
 if __name__ == '__main__':
-    datas = count_number_by_filetype(r'd:\tmp3',"jpg", output=True)
+    datas = count_number_by_filetype(r'd:\tmp3',"jpg,pdf", output=True)
