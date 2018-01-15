@@ -9,6 +9,7 @@ import shutil
 import traceback
 import time
 from pathlib import Path
+import glob
 
 import pandas
 
@@ -229,8 +230,26 @@ def copy_files_by_types(src, dst, types="csv,py",
 
             print("Copying {} to {}".format(file_name, dst_filename))
             shutil.copyfile(str(file_name), dst_filename)
+            
 
+def count_number_by_filetype(input, file_type, output=False):
+    datas = {}
+    dirs = glob.glob("{0}/*/".format(input))
+    
+    if output:
+        print(file_type, ':\n')
+    
+    for dir_ in (dirs):
+        files = glob.glob("{0}/*.{1}".format(dir_, file_type))
+        datas[int(dir_.split(os.sep)[-2])] = len(files)         
+    
+        for seq in range(1,len(maps) + 1):         
+            if seq not in datas:
+                datas[seq] = 0
+            if output:
+                print(datas[seq])
+    return datas
+            
 
 if __name__ == '__main__':
-    copy_files_by_types(r"d:\tmp", r"d:\tmp2", types="jpg",
-                        one_directory=False, directories="back")
+    datas = count_number_by_filetype(r'd:\tmp3',"jpg", output=True)
