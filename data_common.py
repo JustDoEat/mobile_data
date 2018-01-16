@@ -232,15 +232,26 @@ def copy_files_by_types(src, dst, types="csv,py",
             shutil.copyfile(str(file_name), dst_filename)
             
 
-def count_number_by_filetypes(input, file_types, output=False):
+def count_number_by_filetypes(directory, file_types, output=False):
+    '''
+    统计用户目录directory的用例目录下的指定类型文件的个数。
+    可以指定多种文件类型。
+    output为True时会在屏幕输出。
+    比如：count_number_by_filetypes(r'd:\tmp3',"jpg,pdf", output=True)
+    '''
     datas = {}
     for file_ext in file_types.split(','):
-        datas[file_ext] = count_number_by_filetype(input, file_ext, output)
+        datas[file_ext] = count_number_by_filetype(directory, file_ext, output)
     return datas
 
-def count_number_by_filetype(input, file_type, output=False):
+def count_number_by_filetype(directory, file_type, output=False):
+    '''
+    统计用户目录directory的用例目录下的指定类型文件的个数。
+    output为True时会在屏幕输出。
+    比如：count_number_by_filetypes(r'd:\tmp3',"jpg", output=True)
+    '''    
     datas = {}
-    dirs = glob.glob("{0}/*/".format(input))
+    dirs = glob.glob("{0}/*/".format(directory))
     
     if output:
         print('\n', file_type, ':\n')
@@ -258,4 +269,4 @@ def count_number_by_filetype(input, file_type, output=False):
     return datas            
 
 if __name__ == '__main__':
-    datas = count_number_by_filetype(r'd:\tmp3',"jpg,pdf", output=True)
+    datas = count_number_by_filetypes(r'd:\tmp3',"jpg,pdf", output=True)
