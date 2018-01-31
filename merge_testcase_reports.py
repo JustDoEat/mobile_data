@@ -39,7 +39,7 @@ def sum_report(input_directory,type_=0):
                      records.iloc[seq, 4], records.iloc[seq, 5],
                      records.iloc[seq, 6], ]
                 if type_ != 0:
-                    result.append(records.iloc[seq, 7])
+                    result.insert(0,records.iloc[seq, 1])
                 results[index].append(result)
     return results
 
