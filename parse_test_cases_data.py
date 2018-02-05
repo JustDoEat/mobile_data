@@ -23,22 +23,26 @@ import os
 
 import pandas
 
-from data_common import maps, count, convert_result, produce_xls
+from data_common import maps, produce_xls
 
 input_directory = r"D:\test"
 output = r"D:\output.xls"
-results = {}
+file_type = "xls"
 
 
-def get_result(file_name):
+def get_result(file_name, type_=0):
     '''
     统计测试工具生成的用例。
     '''
     try:
-        records = pandas.read_excel(file_name)
+        if file_name.endswith('csv'):
+            records = pandas.read_csv(file_name)
+        else:
+            records = pandas.read_excel(file_name)
         total = len(records)
         compare = len(records[records['比对'] == '通过'])
         live = len(records[records['活体'] == '通过'])
+        eye = len(records[records['睁闭眼'] == '通过'])
         success = len(records[records['结果'] == '通过'])
         test = len(records[records['当前尝试次数'] == 1])
 
@@ -47,24 +51,37 @@ def get_result(file_name):
         print(info)
         traceback.print_exc()
         print('continue...')
-        total = compare = live = success = test = 0
+        total = compare = live = eye = success = test = 0
+    
+    if type_ != 0 :
+        print(records)
+        return (total, compare, live, eye, success, test)
+    else:
+        return (total, compare, live, success, test)
 
-    return (total, compare, live, success, test)
+def get_results(input_directory,file_name='xls', type_=0):
+    # 遍历目录以统计测试工具生成的xls文件
+    results = {}
+    for root, dirs, files in os.walk(input_directory):
+    
+        for file_name in files:
+            if file_name.endswith(file_type):
+                seq = int(root.split(os.sep)[-1].lstrip('0'))
+                result = get_result(
+                    u"{}{}{}".format(root, os.sep, file_name),type_)
+                if seq not in results:
+                    results[seq] = []
+                results[seq].append(result)
+                if str(seq) not in file_name:
+                    os.chdir(root)
+                    shutil.move(file_name, u"{}_{}".format(seq, file_name))
+    return results
 
 
-# 遍历目录以统计测试工具生成的xls文件
-for root, dirs, files in os.walk(input_directory):
-
-    for file_name in files:
-        if file_name.endswith("xls"):
-            seq = int(root.split(os.sep)[-1].lstrip('0'))
-            result = get_result(u"{}{}{}".format(root, os.sep, file_name))
-            if seq not in results:
-                results[seq] = []
-            results[seq].append(result)
-            if str(seq) not in file_name:
-                os.chdir(root)
-                shutil.move(file_name, u"{}_{}".format(seq, file_name))
-
+results = get_results(input_directory,type_=0)
 print(results)
-produce_xls(results, output)
+produce_xls(results, output, 50, type_=0)
+
+#results = get_results(input_directory,type_=1)
+#print(results)
+#produce_xls(results, output, 76, type_=1)

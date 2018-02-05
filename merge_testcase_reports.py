@@ -20,22 +20,28 @@ import glob
 
 import pandas
 
-from data_common import maps, count, convert_result, produce_xls
+from data_common import maps, produce_xls
 
-input_directory = r"D:\test2"
+input_directory = r"D:\test3"
 output = r"d:\output.xls"
-results = {}
 
-for name in glob.glob('{0}{1}*.xls'.format(input_directory, os.sep)):
-    records = pandas.read_excel(name)
-    for seq in range(len(records)):
-        index = records.iloc[seq, 0]
-        if re.match(r'\d+', str(index)):
-            if not index in results:
-                results[index] = []
-            results[index].append(
-                [records.iloc[seq, 2], records.iloc[seq, 3],
-                 records.iloc[seq, 4], records.iloc[seq, 5],
-                 records.iloc[seq, 6], ])
 
-produce_xls(results, output)
+def sum_report(input_directory,type_=0):
+    results = {}
+    for name in glob.glob('{0}{1}*.xls'.format(input_directory, os.sep)):
+        records = pandas.read_excel(name)
+        for seq in range(len(records)):
+            index = records.iloc[seq, 0]
+            if re.match(r'\d+', str(index)):
+                if not index in results:
+                    results[index] = []
+                result = [records.iloc[seq, 2], records.iloc[seq, 3],
+                     records.iloc[seq, 4], records.iloc[seq, 5],
+                     records.iloc[seq, 6], ]
+                if type_ != 0:
+                    result.insert(0,records.iloc[seq, 1])
+                results[index].append(result)
+    return results
+
+results = sum_report(input_directory)
+produce_xls(results, output, 50)
