@@ -5,9 +5,17 @@ flask/api_demo: 使用python3和flask构建RESTful API(接口测试服务) 的�
 wingide6 破解：other/wingide6_python3_crack.py
 
 
-python新书：
+## python书籍
 
-===================================================================
+
+### 数据分析
+
+[Learn Data Analysis with Python - 2018](http://file.allitebooks.com/20180223/Learn%20Data%20Analysis%20with%20Python.pdf)
+
+[Practical Data Science - 2018](http://file.allitebooks.com/20180222/Practical%20Data%20Science.pdf)
+
+
+### UI
 
 [wxPython Recipes - 2017.pdf](http://file.allitebooks.com/20171213/wxPython%20Recipes.pdf)
 
