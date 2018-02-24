@@ -32,14 +32,11 @@ wingide6 破解：other/wingide6_python3_crack.py
 
 https://github.com/vinta/awesome-python
 
-
-交流QQ群：python 测试开发 144081101
+交流QQ群：python 测试开发 144081101  Python数据分析pandas Excel 630011153
 
 wechat： pythontesting
 
-淘宝天猫可以把链接发给qq850766020，为你生成优惠券，降低你的购物成本！
-
-快来领取支付宝跨年红包！1月1日起还有机会额外获得专享红包哦！复制此消息，打开最新版支付宝就能领取！2C56CV70sA
+淘宝天猫购物可以把链接发给qq850766020，为你生成优惠券，降低你的购物成本！
 
 # 测试开发
 
@@ -612,6 +609,116 @@ django-viewlet因为github星级太少而未收录
 
  * Seaborn - 使用Matplotlib进行统计数据可视化。[链接](https://github.com/mwaskom/seaborn) -荐
 
+
+## 数据库(Database)
+
+Python实现的数据库。
+
+  * pickleDB：简单，轻量级键值储存数据库。[链接](https://github.com/patx/pickledb) 
+
+  * PipelineDB：流式 SQL 数据库。[链接](https://github.com/pipelinedb/pipelinedb) 
+
+  * TinyDB：轻型的，面向文档型数据库。[链接](https://github.com/msiemens/tinydb) 
+
+  * ZODB： Python 原生对象数据库。键值和对象图数据库。[链接](https://github.com/zopefoundation/zodb/blob/master/doc/index.rst) 
+
+## 数据库驱动(Database Drivers)
+
+连接和操作数据库的库。
+
+  * mysql-python：Python 的 MySQL 数据库连接器。[链接](https://sourceforge.net/projects/mysql-python/) 不支持python3，不推荐
+
+  * PyMySQL：纯 Python MySQL 驱动，兼容 mysql-python。[链接](https://github.com/PyMySQL/PyMySQL) --推荐
+
+  * mysql-connector-python：mysql官方python API。[链接](https://pypi.python.org/pypi/mysql-connector-python) --推荐
+
+  * psycopg ：Python 中最流行的 PostgreSQL 适配器。[链接](http://initd.org/psycopg/)  --推荐
+
+  * queries：psycopg2 库的封装，用来和 PostgreSQL 进行交互。[链接](https://github.com/gmr/queries) 
+
+  * txpostgres：基于 Twisted 的异步 PostgreSQL 驱动。[链接](https://github.com/wulczer/txpostgres) 
+
+  * apsw：另一个 Python SQLite 封装。[链接](https://rogerbinns.github.io/apsw/) 
+
+  * dataset：在数据库中存储 Python 字典
+        pymssql：简单的 Microsoft SQL Server 数据库接口。[链接](https://github.com/pudo/dataset) 
+
+  * cassandra-python-driver：Cassandra 的 Python 驱动。[链接](https://github.com/datastax/python-driver) 
+
+  * HappyBase：Apache HBase。[链接](https://github.com/wbolster/happybase) 
+
+  * Plyvel：快速且功能丰富的 LevelDB 的 Python 接口。[链接](https://github.com/wbolster/plyvel) 
+
+  * pycassa：Cassandra 的 Python Thrift 驱动。[链接](https://github.com/pycassa/pycassa) 
+
+  * PyMongo：MongoDB 的官方 Python 客户端。[链接](https://github.com/mongodb/mongo-python-driver) -- 推荐
+
+  * redis-py：Redis 的 Python 客户端。[链接](https://github.com/andymccurdy/redis-py) -- 推荐
+
+  * telephus：基于 Twisted 的 Cassandra 客户端。[链接](https://github.com/driftx/Telephus) 
+
+  * txRedis：基于 Twisted 的 Redis 客户端。[链接](https://github.com/driftx/Telephus) 
+
+## 日期和时间（Date and Time）
+
+操作日期和时间的类库。
+
+  * arrow：更好的 Python 日期时间操作类库。[链接](https://github.com/crsmithdev/arrow)  -- 推荐
+
+  * Chronyk：Python 3 的类库，用于解析手写格式的时间和日期。[链接](https://github.com/KoffeinFlummi/Chronyk) 
+
+  * dateutil：Python datetime 模块的扩展。[链接](https://github.com/dateutil/dateutil) 
+
+  * delorean：解决 Python 中有关日期处理的棘手问题的库。[链接](https://github.com/myusuf3/delorean/) 
+
+  * moment：用来处理时间和日期的 Python 库。灵感来自于 Moment.js。[链接](https://github.com/zachwill/moment) 
+
+  * pendulum：更处理datetime。[链接](https://github.com/sdispater/pendulum) 
+
+  * PyTime：简单易用的 Python 模块，用于通过字符串来操作日期/时间。[链接](https://github.com/shinux/PyTime) 
+
+  * pytz：现代以及历史版本的世界时区定义。将时区数据库引入 Python。[链接](https://git.launchpad.net/pytz) --推荐
+
+  * when.py：提供用户友好的函数来帮助用户进行常用的日期和时间操作。[链接](https://github.com/dirn/When.py) 
+
+  * when.py：人性化的datetime。[链接](https://github.com/dirn/When.py) 
+
+
+## 调试工具
+
+代码调试的库。
+
+  * ipdb：IPython的 pdb。[链接](https://github.com/gotcha/ipdb) 
+
+  * pudb：pdb的替代。[链接](https://bitbucket.org/antocuni/pdb/) -- 推荐
+
+  * pudb：全屏，基于控制台的 Python 调试器。[链接](https://github.com/inducer/pudb) 
+
+  * pyringe：可以在 Python 进程中附加和注入代码的调试器。[链接]() 
+
+  * wdb：一个奇异的 web 调试器，通过 WebSockets 工作。[链接]() 
+
+  * winpdb：一个具有图形用户界面的 Python 调试器，可以进行远程调试，基于 rpdb2。[链接]() 
+
+  * django-debug-toolbar：为 Django 显示各种调试信息。[链接]() 
+
+  * django-devserver：一个 Django 运行服务器的替代品。[链接]() 
+
+  * flask-debugtoolbar：django-debug-toolbar 的 flask 版。[链接]() 
+
+  * 性能分析器
+        lineprofiler：逐行性能分析。[链接]() 
+
+  * Memory Profiler：监控 Python 代码的内存使用。官网、内存
+        profiling：一个交互式 Python 性能分析工具。[链接]() 
+
+  * 其他
+        pyelftools：解析和分析 ELF 文件以及 DWARF 调试信息。[链接]() 
+
+  * python-statsd：statsd 服务器的 Python 客户端。[链接]() 
+
+  * 
+
 ##动态消息
 
 用来创建用户活动的库。
@@ -709,7 +816,7 @@ django-viewlet因为github星级太少而未收录
 
 
 
-## 文档
+## 文档(Documentation)
 
 用以生成项目文档的库。
 
@@ -725,7 +832,7 @@ django-viewlet因为github星级太少而未收录
     
  * readthedocs：一个基于 Sphinx/MkDocs 的在线文档托管系统，对开源项目免费开放使用。[链接](https://github.com/rtfd/readthedocs.org/) -- 推荐
 
-## 下载器
+## 下载器(Downloader)
 
 用来进行下载的库.
 
@@ -737,7 +844,7 @@ django-viewlet因为github星级太少而未收录
 
  * youtube-dl：一个小巧的命令行程序，用来下载 YouTube 视频。[链接](http://rg3.github.io/youtube-dl/)
 
-## 电子商务
+## 电子商务(E-commerce)
 
 用于电子商务以及支付的框架和库。
 
@@ -763,7 +870,7 @@ django-viewlet因为github星级太少而未收录
 
 python-currencies因为星级较少没有收录
 
-## 编辑器插件
+## 编辑器插件(Editor Plugins and IDEs)
 
 编辑器和 IDE 的插件
 
@@ -791,7 +898,7 @@ python-currencies因为星级较少没有收录
 
  * komodo-ide [链接](https://www.activestate.com/komodo-ide/python-editor)
 
-## 电子邮件
+## 电子邮件(Email)
 
 用来发送和解析电子邮件的库。
 
@@ -821,7 +928,7 @@ python-currencies因为星级较少没有收录
 
  * sync-engine - IMAP/SMTP同步。 [链接](https://github.com/nylas/sync-engine) -- 推荐
 
-## 环境管理
+## 环境管理(Environment Management)
 
 Python版本和环境管理
 
@@ -837,7 +944,7 @@ Python版本和环境管理
 
  * virtualenvwrapper：virtualenv 的扩展。[链接](https://bitbucket.org/virtualenvwrapper/virtualenvwrapper) --强烈推荐
 
-## 文件
+## 文件(Files)
 
 文件管理和 MIME（多用途的网际邮件扩充协议）类型检测。
 
@@ -869,6 +976,39 @@ Python版本和环境管理
  * pip-tools：保证 Python 包依赖关系更新的工具。[链接](https://github.com/jazzband/pip-tools)
 
  * wheel：Python 分发的新标准，意在取代 eggs。[链接](https://github.com/meshy/pythonwheels) --强烈推荐
+
+## 外部函数接口（Foreign Function Interface）
+
+ * cffi：调用 C 代码。[链接](https://bitbucket.org/cffi/cffi) --强烈推荐
+
+ * ctypes：(Python 标准库) 调用 C 代码。[链接](https://docs.python.org/2/library/ctypes.html) --强烈推荐
+
+ * PyCUDA：Nvidia CUDA API 的封装。[链接](https://github.com/inducer/pycuda) 
+
+ * SWIG：简单的包装器和接口生成器。[链接](http://www.swig.org/Doc1.3/Python.html) 
+
+## 表单（Forms）
+
+ * Deform：Python HTML 表单生成库，受到了 formish 表单生成库的启发。[链接](https://github.com/Pylons/deform) 
+
+ * django-bootstrap3：集成了 Bootstrap 3 的 Django。[链接](https://github.com/dyve/django-bootstrap3) --推荐
+
+ * django-crispy-forms：非常优雅且 DRY（Don't repeat yourself） 的方式来创建美观的表单。[链接](https://github.com/dyve/django-bootstrap3) --推荐
+
+ * django-remote-forms：平台独立的 Django 表单序列化工具。[链接](https://github.com/WiserTogether/django-remote-forms) 
+
+ * WTForms：灵活的表单验证和渲染库。[链接](https://github.com/wtforms/wtforms) 
+
+## 函数式编程（Functional Programming）
+
+ * CyToolz：Toolz 的 Cython 实现 : 高性能函数工具。[链接](https://github.com/pytoolz/cytoolz/) 
+
+ * fn.py：在 Python 中进行函数式编程 : 实现了一些函数式编程缺失的功能。[链接](https://github.com/kachayev/fn.py)  -- 推荐
+
+ * funcy：炫而实用的函数式工具。[链接](https://github.com/Suor/funcy) 
+
+ * Toolz：一组用于迭代器，函数和字典的函数式编程工具。[链接](https://github.com/pytoolz/toolz) 
+
 
 
 ## 特殊文本格式处理
@@ -1146,10 +1286,8 @@ Archive
 ### 持续更新
 
 
-交流QQ群：python 测试开发 144081101
+交流QQ群：python 测试开发 144081101  Python数据分析pandas Excel 630011153
 
 wechat： pythontesting
 
 淘宝天猫可以把链接发给qq850766020，为你生成优惠券，降低你的购物成本！
-
-快来领取支付宝跨年红包！1月1日起还有机会额外获得专享红包哦！复制此消息，打开最新版支付宝就能领取！2C56CV70sA
