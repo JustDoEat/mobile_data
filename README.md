@@ -14,6 +14,13 @@ wingide6 破解：other/wingide6_python3_crack.py
 
 [Practical Data Science - 2018](http://file.allitebooks.com/20180222/Practical%20Data%20Science.pdf)
 
+### 机器学习
+
+[Learning TensorFlow - 2017.pdf](http://file.allitebooks.com/20170928/Learning%20TensorFlow.pdf)
+
+[Pro Deep Learning with TensorFlow - 2018.pdf](http://file.allitebooks.com/20171207/Pro%20Deep%20Learning%20with%20TensorFlow.pdf)
+
+[Reinforcement Learning With Open AI, TensorFlow and Keras Using Python - 2017.pdf](http://file.allitebooks.com/20171210/Reinforcement%20Learning.pdf)
 
 ### UI
 
