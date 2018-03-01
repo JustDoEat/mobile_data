@@ -16,4 +16,3 @@ d = ImageDraw.Draw(pil_image, 'RGBA')
 d.rectangle((pos[3], pos[0], pos[1], pos[2]))
 pil_image.show()
 pil_image.save("quick4.jpg")
-
