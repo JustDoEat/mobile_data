@@ -39,7 +39,13 @@ wingide6 破解：other/wingide6_python3_crack.py
 
 https://github.com/vinta/awesome-python
 
-交流QQ群：python 测试开发 144081101  Python数据分析pandas Excel 630011153
+https://github.com/atinfo/awesome-test-automation
+
+https://github.com/jobbole/awesome-python-cn
+
+https://westurner.github.io/wiki/awesome-python-testing
+
+交流QQ群：python 测试开发自动化测试 144081101  Python数据分析pandas Excel 630011153 中医草药自学自救大数据 391441566 南方中医草药鉴别学习 184175668 中医草药湿热湿疹胃病 291184506 python高级人工智能视觉 6089740 
 
 wechat： pythontesting
 
@@ -47,13 +53,56 @@ wechat： pythontesting
 
 # 测试开发
 
-## UI测试
 
- * appium - 移动端UI自动化测试。 [链接](https://github.com/appium/python-client) --推荐
+## Web UI测试自动化
+
+
+ * splinter - web UI测试工具，基于selnium封装。 [链接](https://github.com/cobrateam/splinter) 
 
  * selenium - web UI自动化测试。 [链接](https://github.com/SeleniumHQ/selenium/tree/master/py) --推荐
 
- * uiautomator- 安卓UI自动化测试。 [链接](https://github.com/xiaocong/uiautomator) --推荐
+ * mechanize- Python中有状态的程序化Web浏览。[链接](https://github.com/python-mechanize/mechanize) 
+
+ * selene - 使用Python + Ajax支持+ PageObjects + Widgets进行简明UI测试 [链接](https://github.com/yashaka/selene/) 
+
+ * hitch - 基于服务的应用程序的高级集成测试框架。[链接](https://github.com/hitchtest/hitch) 
+
+ * Needle  - Css 自动化测试框架。[链接](https://github.com/python-needle/needle) 
+
+ * seleniumbase - 端到端自动化测试框架。[链接](https://github.com/seleniumbase/SeleniumBase) 
+
+ * pytest_splinter - pytest spinter和selenium集成。 [链接](https://github.com/pytest-dev/pytest-splinter)
+
+ * Browsermob Proxy - Browsermob Proxy的python包装器。 [链接](https://github.com/AutomatedTester/browsermob-proxy-py)
+
+ * Selenium-Requests - 扩展Selenium WebDriver类以包含请求库中的请求函数，同时完成所有需要的cookie和请求头处理。[链接](https://github.com/cryzed/Selenium-Requests)
+
+## 移动测试自动化
+
+ * appium - 移动端UI自动化测试。 [链接](https://github.com/appium/python-client) --推荐
+
+ * uiautomator- 安卓UI自动化测试。 [链接](https://github.com/xiaocong/uiautomator) 
+
+ * ATX - 智能手机自动化工具。支持iOS，Android，WebApp和游戏。 网易出品 [链接](https://github.com/xiaocong/uiautomator) --推荐
+
+ * uiautomator2- Android Uiautomator2 Python Wrapper。 [链接](https://github.com/openatx/uiautomator2) --推荐
+
+ * facebook-wda Facebook WebDriverAgent Python Client Library (not official) 可用于IOS应用测试。 [链接](https://github.com/openatx/facebook-wda2) --推荐
+
+## Windows UI测试自动化
+
+ * Winium.Desktop - 开源测试自动化工具，用于基于WinForms和WPF平台自动测试Windows应用程序，基于Selenium远程WebDriver实现。 [链接](https://github.com/2gis/Winium.Desktop/)
+
+ * pyautogui- 跨平台的UI自动化工具，控制鼠标和键盘。 [链接](https://github.com/asweigart/pyautogui) 
+
+ * autopy - 简单的跨平台GUI自动化工具包，适用于Python。 [链接](https://github.com/msanders/autopy) 
+
+ * pywinauto - Windows UI自动化。 [链接](https://github.com/pywinauto/pywinauto/) 
+
+ * SikuliX - 基于OpenCV的GUI测试框架，使用图像识别来定位与之间的项目，来自python 2.7的脚本，跨平台。[链接](https://github.com/RaiMan/SikuliX-2014) 
+
+
+## UI测试
 
  * pyautoacad - AutoCAD自动化。 [链接](https://github.com/reclosedev/pyautocad) 
 
@@ -61,17 +110,11 @@ wechat： pythontesting
 
  * monkeyrunner- 安卓自动化。 [链接](https://developer.android.com/studio/test/monkeyrunner/index.html) 
 
- * pywinauto - Windows UI自动化。 [链接](https://github.com/pywinauto/pywinauto/) 
-
  * ldtp - Linux UI自动化。 [链接](https://pypi.python.org/pypi/ldtp) 
 
  * dogtail- Linux UI自动化。 [链接](https://pypi.python.org/pypi/dogtail) 
 
- * pyautogui- 跨平台的UI自动化工具，控制鼠标和键盘。 [链接](https://github.com/asweigart/pyautogui) 
-
  * pyautoit- autoit python api。 [链接](https://github.com/jacexh/pyautoit) 
-
- * splinter - web UI测试工具，基于selnium封装。 [链接](https://github.com/cobrateam/splinter) 
 
  * 雪峰磁针石说明:
 
@@ -105,6 +148,9 @@ autopy、WATSUP、winGuiAuto因为较长时间未更新未收录
 
  * pytest- 很好的强大的单元测试框架，实际上广泛使用在自动化单元、接口、功能等测试。 [链接](https://github.com/pytest-dev/pytest) -- 强烈推荐 
 
+ * testify - 单元测试框架，提供增强的测试fixture设置，将测试套件拆分成易于并行化的存储bucket，PEP8命名约定，带有大量日志/报告选项及颜色测试运行器。[链接](https://github.com/Yelp/Testify/) 
+
+ * trial - Twisted的单元测试框架，基于unittest。[链接](http://twistedmatrix.com/trac/wiki/TwistedTrial) 
 
  * Robot Framework- 通用的python测试框架，易于上手，生成的报告比较好看，适合小型公司使用，支持关键字和数据等驱动，系业界内很出名的框架。不过因为写用例不能很灵活的应用python，需要大量的python封装，大公司通常使用pytest，django，flask之类的库自行开发。 [链接](https://github.com/robotframework/robotframework) 
 
@@ -121,6 +167,22 @@ autopy、WATSUP、winGuiAuto因为较长时间未更新未收录
  * pyccuracy- 行为驱动 web验收测试框架。 [链接](https://github.com/heynemann/pyccuracy) 
 
  * pytest-bdd- 基于pytest的行为驱动 测试框架。 [链接](https://github.com/pytest-dev/pytest-bdd) 
+
+ * ddt- 数据驱动测试。 [链接](https://github.com/txels/ddt) 
+
+ * behave- 行为驱动测试。 [链接](https://github.com/behave/behave) 
+
+ * lettuce- 行为驱动测试。 [链接](https://github.com/gabrielfalcao/lettuce) 
+
+ * mamba - Python的测试定义工具，基于行为驱动。[链接](https://github.com/nestorsalceda/mamba) 
+
+ * pyvows - Python的异步行为驱动开发，Vows.js的python移植。[链接](https://github.com/heynemann/pyvows) 
+
+ * pyhamcrest - Python的Hamcrest匹配器。 [链接](https://github.com/hamcrest/PyHamcrest) 
+
+ * sure - 强大而灵活的断言python测试库。[链接](https://github.com/gabrielfalcao/sure) 
+
+ * factory_boy - 基于thinkbot的factory_girl的fixture替代。[链接](https://github.com/FactoryBoy/factory_boy) 
 
 
 ## Mock
@@ -402,6 +464,8 @@ django-viewlet因为github星级太少而未收录
  * mypy ：静态类型检查。[链接](https://github.com/python/mypy) --推荐
 
  * pep8 ：python风格检查。[链接](https://github.com/PyCQA/pycodestyle) --推荐
+
+ * prospector - 分析Python代码并输出有关错误，潜在问题，违反常规和复杂性的信息的工具。[链接](https://github.com/landscapeio/prospector)
 
 ## 命令行工具。
 
@@ -1047,6 +1111,8 @@ Python版本和环境管理
  * pyexcel：用于读取，操作和写入CSV，ODS，XLS，XLSX和XLSM文件数据的单一API。[链接](https://github.com/pyexcel/pyexcel)
 
 -- 实际pandas为第一数据处理库，支持所有excel格式。
+
+合并多个excel表，插件mergebooks.dll和vba可以搞定。多表统计求和VBA可以搞定，[参考资料](https://www.zhihu.com/question/20366713), 当然pandas会比它们更强大。PyXLL
         
 ### PDF
 
@@ -1292,9 +1358,8 @@ Archive
 
 ### 持续更新
 
-
-交流QQ群：python 测试开发 144081101  Python数据分析pandas Excel 630011153
+交流QQ群：python 测试开发自动化测试 144081101  Python数据分析pandas Excel 630011153 中医草药自学自救大数据 391441566 南方中医草药鉴别学习 184175668 中医草药湿热湿疹胃病 291184506 python高级人工智能视觉 6089740 
 
 wechat： pythontesting
 
-淘宝天猫可以把链接发给qq850766020，为你生成优惠券，降低你的购物成本！
+淘宝天猫购物可以把链接发给qq850766020，为你生成优惠券，降低你的购物成本！
