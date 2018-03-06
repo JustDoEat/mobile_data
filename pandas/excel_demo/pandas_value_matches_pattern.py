@@ -6,10 +6,10 @@
 import pandas as pd
 
 input_file = r"supplier_data.csv"
-output_file = r"output_files\4output.csv"
+output_file = r"4output.csv"
 
 data_frame = pd.read_csv(input_file)
-data_frame_value_matches_pattern = data_frame.ix[data_frame['Invoice Number']\
+data_frame_value_matches_pattern = data_frame.loc[data_frame['Invoice Number']\
 .str.startswith("001-"), :]
 
 data_frame_value_matches_pattern.to_csv(output_file, index=False)
