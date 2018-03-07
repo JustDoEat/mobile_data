@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author:    xurongzhong#126.com wechat:pythontesting qq:37391319
 # CreateDate: 2018-3-1
-# upload.py
+# uploads.py
 
 '''
 photos=# select * from nodes;
@@ -60,7 +60,7 @@ server = "http://172.20.15.200:5000/api/Photos"
 
 for filename in glob.glob("{}{}*.{}".format(input_, os.sep, file_type)):    
     
-    fid = w.upload_file("/home/andrew/obama0.png") # path to file
+    fid = w.upload_file(filename) # path to file
     file_url = w.get_file_url(fid)
     
     payload = {'url': file_url, 'owner': owner, 'node':node}

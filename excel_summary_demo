@@ -1,0 +1,67 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# Author:    xurongzhong#126.com wechat:pythontesting qq:37391319
+# CreateDate: 2018-3-7
+# excel_summary_demo.py
+"""
+从两个excel中提取测试用例名字，将后面的数值进行统计相加。
+
+注意：
+1，两个excel文件的列名字未必相同。
+2，测试用例的数量和名字未必相同。
+3，列数未必相同
+4，年后提取为公共方法。
+"""
+
+import pandas
+
+file1= r"/home/andrew/2.12.0.xlsx"
+file2= r"/home/andrew/2.13.0.xlsx"
+output = r"/home/andrew/output.xls"
+
+df1 = pandas.read_excel(file1,sheet_name='paper')
+df2 = pandas.read_excel(file2,sheet_name='paper')
+df2 = df2.rename(index=int, columns={"汇总图片": "汇总","用例编号":"编号"})
+
+def merge_excel(df1, df2, key,fixes=None,columns=None,sorts=None):
+
+    df1.fillna(method='ffill',inplace=True)
+    df2.fillna(method='ffill',inplace=True)   
+    columns1 = set(df1.columns)
+    columns2 = set(df2.columns)  
+    for item in columns2 - columns1:
+        df1[item] = 0
+    for item in columns1 - columns2:
+        df2[item] = 0        
+    key1 = list(df1[key])
+    key2 = list(df2[key])
+    df = df1.iloc[0:0]
+    
+    for item in set(key1)|set(key2):
+        if item in set(key1)&set(key2):
+            value = df1.iloc[key1.index(item)] + df2.iloc[key2.index(item)]
+            value[key] = df1.iloc[key1.index(item)][key]
+            for name in fixes:
+                value[name] = df1.iloc[key1.index(item)][name]
+        elif item in set(df1[key]):
+            value = df1.iloc[key1.index(item)]
+        else:
+            value = df2.iloc[key2.index(item)]    
+        df = pandas.concat([df, value.to_frame().T]) 
+    
+    if sorts:
+        df = df.sort_values(by=sorts)
+    if sorts:
+        df = df.loc[:,columns]      
+    return df
+
+columns = ["type","测试用例","汇总",'2pd-v2.11','2pd-v2.12','2pd-v2.13',
+               '2pd-v2.14','2pd-v2.15']
+df = merge_excel(df1, df2, '测试用例',fixes=["type","编号"], sorts=["type","编号"],
+                 columns=columns)
+df.to_excel(output, sheet_name='paper', index=False)
+
+
+
+
+    

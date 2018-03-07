@@ -316,5 +316,43 @@ def file2dict(filename, change=False, multi=False):
                 result[key] = value
     return result
 
+def merge_excel(df1, df2, key,fixes=None,columns=None,sorts=None):
+    """
+    key: 能区分行的列名
+    fixes： 不需要相加的列，默认为None
+    columns： 需要输出的列，默认为None，输出所有列
+    sorts： 排序
+    """
+
+    df1.fillna(method='ffill',inplace=True)
+    df2.fillna(method='ffill',inplace=True)   
+    columns1 = set(df1.columns)
+    columns2 = set(df2.columns)  
+    for item in columns2 - columns1:
+        df1[item] = 0
+    for item in columns1 - columns2:
+        df2[item] = 0        
+    key1 = list(df1[key])
+    key2 = list(df2[key])
+    df = df1.iloc[0:0]
+    
+    for item in set(key1)|set(key2):
+        if item in set(key1)&set(key2):
+            value = df1.iloc[key1.index(item)] + df2.iloc[key2.index(item)]
+            value[key] = df1.iloc[key1.index(item)][key]
+            for name in fixes:
+                value[name] = df1.iloc[key1.index(item)][name]
+        elif item in set(df1[key]):
+            value = df1.iloc[key1.index(item)]
+        else:
+            value = df2.iloc[key2.index(item)]    
+        df = pandas.concat([df, value.to_frame().T]) 
+    
+    if sorts:
+        df = df.sort_values(by=sorts)
+    if sorts:
+        df = df.loc[:,columns]      
+    return df
+
 if __name__ == '__main__':
     datas = count_number_by_filetypes(r'd:\tmp3',"jpg,pdf", output=True)
