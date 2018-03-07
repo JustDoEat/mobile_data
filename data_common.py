@@ -286,7 +286,35 @@ def count_number_by_filetype(directory, file_type, output=False):
         if output:
             print(datas[seq])
             
-    return datas            
+    return datas    
+
+def concat_excel(files, usecols=None, index_col=None, strips={}):
+    all_data_frames = []
+    for file_name in files:
+        df = pandas.read_excel(file_name, index_col=index_col, usecols=usecols)
+        all_data_frames.append(df)
+    df = pandas.concat(all_data_frames, ignore_index=True)
+    if strips:
+        for item in strips:
+            df[item] = df[item].str.strip(strips[item])    
+    return df
+
+
+def file2dict(filename, change=False, multi=False):
+    result = {}
+    for line in open(filename):
+        if line.strip():   
+            if change:
+                value, key = line.split()
+            else:
+                key, value = line.split()
+            if multi:   
+                if key not in result:
+                    result[key] = []
+                result[key].append(value)
+            else:
+                result[key] = value
+    return result
 
 if __name__ == '__main__':
     datas = count_number_by_filetypes(r'd:\tmp3',"jpg,pdf", output=True)
