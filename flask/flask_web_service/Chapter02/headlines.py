@@ -17,9 +17,9 @@ def get_news(publication="bbc"):
     return """<html>
     <body>
         <h1>Headlines </h1>
-        <b>{0}</b> 
-        <i>{1}</i>
-        <p>{2}</p>
+        <b>{0}</b> </ br>
+        <i>{1}</i> </ br>
+        <p>{2}</p> </ br>
     </body>
 </html>""".format(first_article.get("title"),
                   first_article.get("published"),
