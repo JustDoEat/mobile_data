@@ -10,6 +10,7 @@ import traceback
 import time
 from pathlib import Path
 import glob
+import hashlib
 
 import pandas
 
@@ -296,7 +297,7 @@ def concat_excel(files, usecols=None, index_col=None, strips={}):
     df = pandas.concat(all_data_frames, ignore_index=True)
     if strips:
         for item in strips:
-            df[item] = df[item].str.strip(strips[item])    
+            df[item] = df[item].str.replace(strips[item], "")
     return df
 
 
@@ -315,6 +316,12 @@ def file2dict(filename, change=False, multi=False):
             else:
                 result[key] = value
     return result
+
+def get_md5(content, is_file=False):
+    if is_file:
+        return hashlib.md5(open(content,'rb').read()).hexdigest()
+    else:
+        return hashlib.md5(content).hexdigest()
 
 def merge_excel(df1, df2, key,fixes=None,columns=None,sorts=None):
     """
