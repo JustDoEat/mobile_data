@@ -29,6 +29,70 @@ wingide6 破解：other/wingide6_python3_crack.py
 
 常用的python测试开发库。
 
+### opencv 书籍汇总
+
+Practical Computer Vision Extract insightful information from images using TensorFlow, Keras, and OpenCV 2018-02 
+
+OpenCV 3.x with Python By Example: Make the most of OpenCV and Python to build applications for object recognition and augmented reality 2018-01 下载地址：qq群6089740
+
+Computer Vision with OpenCV 3 and Qt5: Build visually appealing, multithreaded, cross-platform computer vision applications 2018-01
+
+[Learning OpenCV 3 - 2017)(英文版)2017-10](http://file.allitebooks.com/20170108/Learning%20OpenCV%203.pdf)
+
+[Pro Processing for Images and Computer Vision with OpenCV - 2017.pdf](http://file.allitebooks.com/20170827/Pro%20Processing%20for%20Images%20and%20Computer%20Vision%20with%20OpenCV.pdf)
+
+深度学习(deep learning) - 2017 中文 下载地址：qq群6089740
+
+Machine Learning for OpenCV - 2017 下载地址：qq群6089740
+
+Mastering OpenCV 3(2nd) - 2017 下载地址：qq群6089740
+
+Build with OpenCV 2017-04
+
+OpenCV 3 Computer Vision Application Programming Cookbook - Third Edition 2017-02 qq群6089740
+
+Learning OpenCV 3 Application Development 2016-12 qq群6089740 
+
+[Learning OpenCV 3 - 2017.pdf](http://file.allitebooks.com/20170108/Learning%20OpenCV%203.pdf)
+
+OpenCV Computer Vision Projects with Python - 2016 qq群6089740 
+
+Computer Vision Metrics - 2014 Computer Vision Metrics - 2014
+
+[OpenCV for Secret Agents - 2014 ](http://file.allitebooks.com/20160519/OpenCV%20for%20Secret%20Agents.pdf)
+
+[OpenCV By Example - 2016.pdf ](http://file.allitebooks.com/20160124/OpenCV%20By%20Example.pdf)
+
+世界著名计算机教材精选:图像处理、分析与机器视觉(第4版)  qq群6089740 
+
+[iOS Application Development with OpenCV 3.pdf - 2016 ](http://file.allitebooks.com/20170523/iOS%20Application%20Development%20with%20OpenCV%203.pdf)
+
+Image Processing, Analysis, and Machine Vision, 4th - 2013  qq群6089740 
+
+深入OPENCV ANDROID应用开发 - 2015 qq群6089740
+
+[Mastering OpenCV Android Application Programming- 2015](http://file.allitebooks.com/20150823/Mastering%20OpenCV%20Android%20Application%20Programming.pdf)
+
+[Learning Image Processing with OpenCV - 2015](http://file.allitebooks.com/20150829/Learning%20Image%20Processing%20with%20OpenCV.pdf)
+
+[OpenCV Android Programming By Example - 2016](http://file.allitebooks.com/20151228/OpenCV%20Android%20Programming%20By%20Example.pdf)
+
+OpenCV 3计算机视觉:Python语言实现(原书第2版) qq群6089740 
+
+[Learning OpenCV 3 Computer Vision with Python, 2nd Edition- 2015](http://file.allitebooks.com/20160908/Learning%20OpenCV%203%20Computer%20Vision%20with%20Python,%202nd%20Edition.pdf)
+
+[OpenCV with Python Blueprints - 2015](http://file.allitebooks.com/20160816/OpenCV%20with%20Python%20Blueprints.rar)
+
+[OpenCV 3 Blueprints - 2015](http://file.allitebooks.com/20151126/OpenCV%203%20Blueprints.pdf)
+
+[Android Application Programming with OpenCV - 2013](http://file.allitebooks.com/20150520/Android%20Application%20Programming%20with%20OpenCV.pdf)
+
+[Android Application Programming with OpenCV 3 - 2015](http://file.allitebooks.com/20150811/Android%20Application%20Programming%20with%20OpenCV%203.pdf)
+
+opencv 计算机视觉编程攻略 第2版. + 源代码 qq群6089740
+
+[OpenCV 3.0 Computer Vision with Java - 2015](http://file.allitebooks.com/20150913/OpenCV%203.0%20Computer%20Vision%20with%20Java.pdf)
+
 ===================================================================
 
 
