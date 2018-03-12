@@ -10,9 +10,37 @@ wingide6 破解：other/wingide6_python3_crack.py
 
 ### 数据分析
 
+#### pandas
+
+利用Python进行数据分析 qq群：630011153
+
+零起点Python大数据与量化交易 - 2017 qq群：630011153
+
+Python金融大数据分析 qq群：630011153
+
+Python数据挖掘入门与实践(中文完整版) 
+
+[Python Data Analytics - 2015](http://file.allitebooks.com/20151217/Python%20Data%20Analytics.pdf)
+
+Learning the Pandas Library: Python Tools for Data Munging, Analysis, and Visual 2016-06
+
+[Learning Pandas - 2015](http://file.allitebooks.com/20150425/Learning%20pandas.pdf)
+
+[Python Data Science Cookbook- 2015](http://file.allitebooks.com/20151124/Python%20Data%20Science%20Cookbook.pdf)
+
 [Learn Data Analysis with Python - 2018](http://file.allitebooks.com/20180223/Learn%20Data%20Analysis%20with%20Python.pdf)
 
 [Practical Data Science - 2018](http://file.allitebooks.com/20180222/Practical%20Data%20Science.pdf)
+
+Pandas for Everyone Python Data Analysis -2018.pdf qq群：630011153
+
+Learning pandas - Second Edition - 2017 qq群：630011153
+
+Pandas Cookbook Recipes for Scientific Computing - 2017  qq群：630011153
+
+Python for Data Analysis, 2nd Edition - 2017.pdf qq群：630011153 [下载](http://file.allitebooks.com/20171009/Python%20for%20Data%20Analysis,%202nd%20Edition.pdf)
+
+
 
 ### 机器学习
 
@@ -92,6 +120,23 @@ OpenCV 3计算机视觉:Python语言实现(原书第2版) qq群6089740
 opencv 计算机视觉编程攻略 第2版. + 源代码 qq群6089740
 
 [OpenCV 3.0 Computer Vision with Java - 2015](http://file.allitebooks.com/20150913/OpenCV%203.0%20Computer%20Vision%20with%20Java.pdf)
+
+OpenCV入门教程 qq群6089740
+
+OpenCV教程基础篇 qq群6089740
+
+OPENCV编程案例详解 ,李立宗 ,P487 ,2016.10 qq群6089740
+
+学习OpenCV(中文版).pdf+OpenCV计算机视觉编程攻略 (第2版).pdf及代码 qq群6089740
+
+OpenCV3编程入门+代码 qq群6089740
+
+视觉SLAM - 2017 qq群6089740
+
+OpenCV图像处理编程实例 - 2016.pdf qq群6089740
+
+A Computational Introduction to Digital Image Processing, Second Edition -2016 qq群6089740
+
 
 ===================================================================
 
