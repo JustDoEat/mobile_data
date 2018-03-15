@@ -386,14 +386,63 @@ def get_shuangtong_photos(diretory):
     results['paper'] = paper_photos
     return results
 
-def get_beijing_results(filename):
+def get_bj_results(filename,return_dict=False):
     names=['name','left','top','length','height','v','score']
-    df = pandas.read_csv(filename, names=names, sep='\s')
+    df = pandas.read_csv(filename, names=names, sep='\s', engine='python')
     rename = lambda x: os.path.basename(x)
     df['name'] = df['name'].apply(rename)    
-    return df
+    if return_dict:
+        results = {}
+        for num in range(len(df)):
+            row =  df.iloc[num]
+            results[row['name']] = (
+                row['left'],row['top'],row['left'] + row['length'],
+                row['top'] + row['height']) 
+        return results
+    else:
+        return df
+    
+def rename_shuangtong(name):
+    names = name.split('/')
+    filename = "{}{}/{}".format(
+    "20180228_双通人脸检测_zhourong/Image/33941/双通活体检测全集数据/",
+    names[-2],names[-1])
+    return filename    
+    
+def get_sz_shuangtong_results(
+    filenames,output_file=False,
+    out_filename="/home/andrew/code/detection_results.txt"):
+    
+    df_paper = pandas.read_excel(filenames['paper'],usecols=[0,6]) 
+    df_human = pandas.read_excel(filenames['human_test'],usecols=[0,6]) 
+    df = pandas.concat([df_paper, df_human])
+    df['图片的路径'] = df['图片的路径'].apply(rename_shuangtong)   
+    
+    if output_file:
+        # 生成北京需要的测试结果        
+        detection_results = ""
+        for num in range(len(df)):
+            row =  df.iloc[num]
+            name = row['图片的路径']
+            result = row['测试结果']
+            # left, top, right,  bottom
+            if result != '未检测到人脸':
+                sore = float(result.split(':')[-1].strip())
+                temps = result.split('[')
+                left, top = temps[1].strip(']').split(',')
+                right,  bottom = temps[2].split(']')[0].split(',')  
+                detection_result = "{0} {1} {2} {3} {4} 1 {5} \n".format(
+                name,left, top, int(right) - int(left),  int(bottom) - int(top), sore)
+                detection_results = detection_results +  detection_result
+             
+        f = open(out_filename, 'wb')
+        f.write(detection_results.encode(encoding='utf_8', errors='strict'))
+        f.close()   
+    else:
+        return df
 
 def get_result_filelist(directoy):
+    '''获取深圳的XLS结果文件列表'''
     p = Path(directoy)
     files = p.glob('**/*.{0}'.format("xls"))   
     xls_files = {}
