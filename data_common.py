@@ -11,6 +11,7 @@ import time
 from pathlib import Path
 import glob
 import hashlib
+import re
 
 import pandas
 
@@ -360,6 +361,54 @@ def merge_excel(df1, df2, key,fixes=None,columns=None,sorts=None):
     if sorts:
         df = df.loc[:,columns]      
     return df
+
+def output_file(name, items):
+    '''输出列表为文本文件'''
+    f = open(name,'w')
+    for item in items:
+        f.write("{}\n".format(item))
+    f.close()
+
+def get_filename(items):
+    '''将列名中的文件字符串只保留文件名'''
+    return [ os.path.basename(x) for x in items]  
+
+def get_shuangtong_photos(diretory):
+    results = {}
+    base_human = r'{}{}human_test'.format(diretory, os.sep)
+    base_paper = r'{}{}paper'.format(diretory, os.sep)
+    
+    human_photos = get_filename(glob.glob('{}{}*.*'.format(base_human,os.sep)))
+    human_photos = get_filename(human_photos)
+    paper_photos = get_filename(glob.glob('{}{}*.*'.format(base_paper,os.sep)))
+    paper_photos = get_filename(paper_photos)
+    results['human_test'] = human_photos
+    results['paper'] = paper_photos
+    return results
+
+def get_beijing_results(filename):
+    names=['name','left','top','length','height','v','score']
+    df = pandas.read_csv(filename, names=names, sep='\s')
+    rename = lambda x: os.path.basename(x)
+    df['name'] = df['name'].apply(rename)    
+    return df
+
+def get_result_filelist(directoy):
+    p = Path(directoy)
+    files = p.glob('**/*.{0}'.format("xls"))   
+    xls_files = {}
+    for filename in files:
+        version = re.search('v\d+\.\d+\.\d+',str(filename)).group()
+        if version not in xls_files:
+            xls_files[version] = {}        
+        if "双通" in str(filename):         
+            if "paper" in str(filename):           
+                xls_files[version]['paper'] = str(filename)
+            else:
+                xls_files[version]['human_test'] = str(filename)
+        else:
+            xls_files[version]['tongyong'] = str(filename)
+    return xls_files
 
 if __name__ == '__main__':
     datas = count_number_by_filetypes(r'd:\tmp3',"jpg,pdf", output=True)
