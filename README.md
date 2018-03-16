@@ -907,6 +907,22 @@ Python实现的数据库。
 
  * Stream-Framework：使用 Cassandra 和 Redis 创建动态消息和通知系统。[链接](https://github.com/tschellenbach/Stream-Framework)
 
+## 图形用户界面(GUI)
+
+
+ * curses：内置的ncurses 封装，用来创建终端图形用户界面。标准库。[链接](https://docs.python.org/3/library/curses.html) 
+ * Eel - 用于制作简单电子类离线HTML / JS GUI应用程序的小程序库。[链接](https://github.com/ChrisKnott/Eel) 
+ * enaml：使用类似 QML 的 Declaratic 语法来创建美观的用户界面。[链接](https://github.com/nucleic/enaml)
+ * kivy：创建NUI应用程序的库，可以运行在 Windows, Linux, Mac OS X, Android 以及 iOS 平台上。[链接](https://github.com/kivy/kivy) -推荐
+ * pyglet：Python 的跨平台窗口及多媒体库。[链接](https://bitbucket.org/pyglet/)
+ * PyQt：跨平台用户界面框架 Qt 的 Python 绑定 ，支持 Qt v4 和 Qt v5。[链接](https://riverbankcomputing.com/software/pyqt/intro)
+ * PySide：跨平台用户界面框架 Qt 的 Python 绑定 ，支持 Qt v4。[链接](https://wiki.qt.io/PySide)
+ * Tkinter：Python GUI 标准库。[链接](https://wiki.python.org/moin/TkInter)
+ * Toga：Python 原生的, 操作系统原生的 GUI 工具包。[链接](https://github.com/pybee/toga)
+ * urwid：创建终端 GUI 应用的库，支持组件，事件和丰富的色彩等。[链接](https://github.com/urwid/urwid)
+ * wxPython：wxPython 是 wxWidgets C++ 类库和 Python 语言混合的产物。[链接](https://github.com/wxWidgets/Phoenix/)
+ * PyGObject：GLib/GObject/GIO/GTK+ (GTK+3) 的 Python 绑定。[链接](https://wiki.gnome.org/Projects/PyGObject)
+ * Flexx：纯 Python编写的用来创建 GUI 程序的工具集，它使用 web 技术进行界面的展示。[链接](https://github.com/flexxui/flexx) 
 
 ##　ORM
 
