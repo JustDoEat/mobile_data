@@ -40,7 +40,15 @@ Pandas Cookbook Recipes for Scientific Computing - 2017  qq群：630011153
 
 Python for Data Analysis, 2nd Edition - 2017.pdf qq群：630011153 [下载](http://file.allitebooks.com/20171009/Python%20for%20Data%20Analysis,%202nd%20Edition.pdf)
 
+#### 爬虫
 
+[Python Requests Essentials - 2015.pdf](http://file.allitebooks.com/20170813/Python%20Requests%20Essentials.pdf)
+
+[Web Scraping with Python - 2015.pdf](http://file.allitebooks.com/20150731/Web%20Scraping%20with%20Python.pdf)
+
+[Learning Scrapy -2016.pdf](http://file.allitebooks.com/20160330/Learning%20Scrapy.pdf)
+
+Python网络数据采集 qq群：630011153
 
 ### 机器学习
 
